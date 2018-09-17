@@ -10,4 +10,14 @@ class Thread extends Model
     *fillable表示在create()方法中可以被赋值的字段，对应的是guarded表示在create()方法中不能被赋值的字段
     */
      protected $guarde=[];//意味所有属性均可更新，后期会修复此安全隐患
+
+     public function path(){
+          return 'threads/'.$this->id;
+     }
+
+     public function replies(){
+
+          return  $this->hasMany(Reply::class);
+     }
 }
+

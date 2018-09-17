@@ -14,7 +14,6 @@ class ThreadsController extends Controller
      */
     public function index()
     {
-        //echo 111;exit;
         $threads=Thread::latest()->get();//latest() 和 oldest() 方法允许你轻松地按日期对查询结果排序。默认情况下是对 created_at 字段进行排序。或者，你可以传递你想要排序的字段名称：
         return view('threads.index',compact('threads'));
     }
@@ -37,7 +36,7 @@ class ThreadsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -48,7 +47,8 @@ class ThreadsController extends Controller
      */
     public function show(Thread $thread)
     {
-        //
+
+        return view('threads.show',compact('thread'));//$thread 实体类
     }
 
     /**
